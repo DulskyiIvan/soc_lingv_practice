@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
-
+{% block stylesheets %}
+    <link  rel="stylesheet" href="/public/style.css"  >
+{% endblock %}
 {% block body %}
 <form method="post">
     {% if error %}
@@ -38,5 +40,6 @@
     <button class="btn btn-lg btn-primary" type="submit">
         Sign in
     </button>
+
 </form>
 {% endblock %}

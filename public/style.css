@@ -1,0 +1,33 @@
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 3px 15px;
+    color: #fff;
+    background: #000000;
+    font-size: 12px;
+    box-shadow: 0 0 3px -3px #000;
+    position: relative;
+    margin-left: 121px;
+    cursor: pointer;
+}
+
+button::before {
+    content: '';
+    width: 138px;
+    height: 11px;
+    border-radius: 5px;
+    background: #fff;
+    position: absolute;
+    top: 0; left: 3px;
+    opacity: 30%;
+    display: none;
+}
+button:hover::before {
+    display: block;
+}
+
+body {
+
+   position: relative;
+    background: #C82829;
+}
