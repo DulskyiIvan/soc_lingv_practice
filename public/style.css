@@ -11,7 +11,7 @@ h1.h3 {
   margin-right: auto;
   text-align: center;
   border-radius: 25px;
-  background-color: darkslateblue;
+ /* background-color: darkslateblue;*/
   font-size: 30px;
   font-style: italic;
   
@@ -19,8 +19,13 @@ h1.h3 {
 
 body{
 
- background-image: url("/images/sociological-survey-title.jpg");
-  background-position: center;
+ background-image: url("/images/AdobeStock-168775357-1030x676-1024x672.jpeg") ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*background-position: center;*/
+
 
 }
 /*.fields {
