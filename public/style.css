@@ -1,33 +1,88 @@
+form {
+  margin: 0 8px 0 8px;
+  padding: 100px 100px 250px 100px;
+
+  font: 14px Arial, sans-serif;
+
+}
+
+h1.h3 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 25px;
+  background-color: darkslateblue;
+  font-size: 30px;
+  font-style: italic;
+  
+}
+
+body{
+
+ background-image: url("/images/sociological-survey-title.jpg");
+  background-position: center;
+
+}
+/*.fields {
+  border: 1px solid #ccc;
+  padding: 15px 0 30px 10px;
+}*/
+
+label {
+  font-family: "Times New Roman";
+  font-size: 21px;
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+  position: relative;
+  left: 42%;
+  }
+
+input {
+  width: 190px;
+  position: relative;
+  left: 42%;
+
+  }
+
+p {
+  margin: -20px 0 0 10px;
+}
+
 button {
-    border: none;
-    border-radius: 10px;
-    padding: 3px 15px;
-    color: #fff;
-    background: #000000;
-    font-size: 12px;
-    box-shadow: 0 0 3px -3px #000;
-    position: relative;
-    margin-left: 121px;
-    cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  color: #fff;
+  background-color: darkslateblue;
+  font-size: 12px;
+  box-shadow: 0 0 3px -3px #000;
+  position: relative;
+  left: 37%;
+  margin-left: 121px;
+  cursor: pointer;
 }
 
-button::before {
-    content: '';
-    width: 138px;
-    height: 11px;
-    border-radius: 5px;
-    background: #fff;
-    position: absolute;
-    top: 0; left: 3px;
-    opacity: 30%;
-    display: none;
-}
-button:hover::before {
-    display: block;
-}
 
-body {
+button:hover {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  color: #000000;
+  background: #ffffff;
+  font-size: 12px;
 
-   position: relative;
-    background: #C82829;
+  box-shadow: 0 0 3px -3px #000;
+  position: relative;
+  margin-left: 121px;
+  cursor: pointer;
+  display: block;
+}
+footer{
+  margin-left: 0;
+  margin-right: 0;
+  height: 30px;
+  text-align: center;
+
+
 }
