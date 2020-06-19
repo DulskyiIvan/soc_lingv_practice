@@ -102,6 +102,37 @@ class Questionary
      */
     private $russianLanguageLevel;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $needStudyRussianInSchool;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $priorityLanguageInFamily;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $priorityLanguageWithFriends;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $tokenOfChooseInformation;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $languageWithUnknown;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Practicant::class, inversedBy="questionaries")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $practicant;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -307,6 +338,78 @@ class Questionary
     public function setRussianLanguageLevel(string $russianLanguageLevel): self
     {
         $this->russianLanguageLevel = $russianLanguageLevel;
+
+        return $this;
+    }
+
+    public function getNeedStudyRussianInSchool(): ?string
+    {
+        return $this->needStudyRussianInSchool;
+    }
+
+    public function setNeedStudyRussianInSchool(string $needStudyRussianInSchool): self
+    {
+        $this->needStudyRussianInSchool = $needStudyRussianInSchool;
+
+        return $this;
+    }
+
+    public function getPriorityLanguageInFamily(): ?string
+    {
+        return $this->priorityLanguageInFamily;
+    }
+
+    public function setPriorityLanguageInFamily(string $priorityLanguageInFamily): self
+    {
+        $this->priorityLanguageInFamily = $priorityLanguageInFamily;
+
+        return $this;
+    }
+
+    public function getPriorityLanguageWithFriends(): ?string
+    {
+        return $this->priorityLanguageWithFriends;
+    }
+
+    public function setPriorityLanguageWithFriends(string $priorityLanguageWithFriends): self
+    {
+        $this->priorityLanguageWithFriends = $priorityLanguageWithFriends;
+
+        return $this;
+    }
+
+    public function getTokenOfChooseInformation(): ?string
+    {
+        return $this->tokenOfChooseInformation;
+    }
+
+    public function setTokenOfChooseInformation(string $tokenOfChooseInformation): self
+    {
+        $this->tokenOfChooseInformation = $tokenOfChooseInformation;
+
+        return $this;
+    }
+
+    public function getLanguageWithUnknown(): ?string
+    {
+        return $this->languageWithUnknown;
+    }
+
+    public function setLanguageWithUnknown(string $languageWithUnknown): self
+    {
+        $this->languageWithUnknown = $languageWithUnknown;
+
+        return $this;
+    }
+
+    public function getPracticant(): ?Practicant
+    {
+        return $this->practicant;
+    }
+
+    public function setPracticant(?Practicant $practicant): self
+    {
+        $this->practicant = $practicant;
 
         return $this;
     }
