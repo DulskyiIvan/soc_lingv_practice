@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questionary{% endblock %}
+
+{% block body %}
+    <h1>Questionary</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ questionary.id }}</td>
+            </tr>
+            <tr>
+                <th>LiveLocation</th>
+                <td>{{ questionary.liveLocation }}</td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>{{ questionary.nationality }}</td>
+            </tr>
+            <tr>
+                <th>Sex</th>
+                <td>{{ questionary.sex }}</td>
+            </tr>
+            <tr>
+                <th>BirthYear</th>
+                <td>{{ questionary.birthYear ? questionary.birthYear|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Education</th>
+                <td>{{ questionary.education }}</td>
+            </tr>
+            <tr>
+                <th>Profession</th>
+                <td>{{ questionary.profession }}</td>
+            </tr>
+            <tr>
+                <th>SocialityState</th>
+                <td>{{ questionary.socialityState }}</td>
+            </tr>
+            <tr>
+                <th>NativeLanguage</th>
+                <td>{{ questionary.nativeLanguage }}</td>
+            </tr>
+            <tr>
+                <th>WhereAreYouLongTermLived</th>
+                <td>{{ questionary.whereAreYouLongTermLived }}</td>
+            </tr>
+            <tr>
+                <th>FatherLanguage</th>
+                <td>{{ questionary.fatherLanguage }}</td>
+            </tr>
+            <tr>
+                <th>MatherLanguage</th>
+                <td>{{ questionary.matherLanguage }}</td>
+            </tr>
+            <tr>
+                <th>AgeStartStudyRussian</th>
+                <td>{{ questionary.ageStartStudyRussian }}</td>
+            </tr>
+            <tr>
+                <th>AgeStartStudyUkrainian</th>
+                <td>{{ questionary.ageStartStudyUkrainian }}</td>
+            </tr>
+            <tr>
+                <th>LanguageBeforeSchool</th>
+                <td>{{ questionary.languageBeforeSchool }}</td>
+            </tr>
+            <tr>
+                <th>LanguageInSchool</th>
+                <td>{{ questionary.languageInSchool }}</td>
+            </tr>
+            <tr>
+                <th>UkrainianLanguageLevel</th>
+                <td>{{ questionary.ukrainianLanguageLevel }}</td>
+            </tr>
+            <tr>
+                <th>RussianLanguageLevel</th>
+                <td>{{ questionary.russianLanguageLevel }}</td>
+            </tr>
+            <tr>
+                <th>NeedStudyRussianInSchool</th>
+                <td>{{ questionary.needStudyRussianInSchool }}</td>
+            </tr>
+            <tr>
+                <th>PriorityLanguageInFamily</th>
+                <td>{{ questionary.priorityLanguageInFamily }}</td>
+            </tr>
+            <tr>
+                <th>PriorityLanguageWithFriends</th>
+                <td>{{ questionary.priorityLanguageWithFriends }}</td>
+            </tr>
+            <tr>
+                <th>TokenOfChooseInformation</th>
+                <td>{{ questionary.tokenOfChooseInformation }}</td>
+            </tr>
+            <tr>
+                <th>LanguageWithUnknown</th>
+                <td>{{ questionary.languageWithUnknown }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('questionary_index') }}">back to list</a>
+
+    <a href="{{ path('questionary_edit', {'id': questionary.id}) }}">edit</a>
+
+    {{ include('questionary/_delete_form.html.twig') }}
+{% endblock %}

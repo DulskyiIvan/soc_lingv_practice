@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Practicant index{% endblock %}
+
+{% block body %}
+    <h1>Practicant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for practicant in practicants %}
+            <tr>
+                <td>{{ practicant.id }}</td>
+                <td>{{ practicant.username }}</td>
+                <td>{{ practicant.roles ? practicant.roles|json_encode : '' }}</td>
+                <td>{{ practicant.password }}</td>
+                <td>{{ practicant.firstName }}</td>
+                <td>{{ practicant.lastName }}</td>
+                <td>
+                    <a href="{{ path('practicant_show', {'id': practicant.id}) }}">show</a>
+                    <a href="{{ path('practicant_edit', {'id': practicant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('practicant_new') }}">Create new</a>
+{% endblock %}
