@@ -47,6 +47,61 @@ class Questionary
      */
     private $profession;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $socialityState;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nativeLanguage;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $whereAreYouLongTermLived;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fatherLanguage;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $matherLanguage;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $ageStartStudyRussian;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $ageStartStudyUkrainian;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $languageBeforeSchool;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $languageInSchool;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ukrainianLanguageLevel;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $russianLanguageLevel;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +175,138 @@ class Questionary
     public function setProfession(string $profession): self
     {
         $this->profession = $profession;
+
+        return $this;
+    }
+
+    public function getSocialityState(): ?string
+    {
+        return $this->socialityState;
+    }
+
+    public function setSocialityState(string $socialityState): self
+    {
+        $this->socialityState = $socialityState;
+
+        return $this;
+    }
+
+    public function getNativeLanguage(): ?string
+    {
+        return $this->nativeLanguage;
+    }
+
+    public function setNativeLanguage(string $nativeLanguage): self
+    {
+        $this->nativeLanguage = $nativeLanguage;
+
+        return $this;
+    }
+
+    public function getWhereAreYouLongTermLived(): ?string
+    {
+        return $this->whereAreYouLongTermLived;
+    }
+
+    public function setWhereAreYouLongTermLived(string $whereAreYouLongTermLived): self
+    {
+        $this->whereAreYouLongTermLived = $whereAreYouLongTermLived;
+
+        return $this;
+    }
+
+    public function getFatherLanguage(): ?string
+    {
+        return $this->fatherLanguage;
+    }
+
+    public function setFatherLanguage(string $fatherLanguage): self
+    {
+        $this->fatherLanguage = $fatherLanguage;
+
+        return $this;
+    }
+
+    public function getMatherLanguage(): ?string
+    {
+        return $this->matherLanguage;
+    }
+
+    public function setMatherLanguage(string $matherLanguage): self
+    {
+        $this->matherLanguage = $matherLanguage;
+
+        return $this;
+    }
+
+    public function getAgeStartStudyRussian(): ?int
+    {
+        return $this->ageStartStudyRussian;
+    }
+
+    public function setAgeStartStudyRussian(int $ageStartStudyRussian): self
+    {
+        $this->ageStartStudyRussian = $ageStartStudyRussian;
+
+        return $this;
+    }
+
+    public function getAgeStartStudyUkrainian(): ?int
+    {
+        return $this->ageStartStudyUkrainian;
+    }
+
+    public function setAgeStartStudyUkrainian(int $ageStartStudyUkrainian): self
+    {
+        $this->ageStartStudyUkrainian = $ageStartStudyUkrainian;
+
+        return $this;
+    }
+
+    public function getLanguageBeforeSchool(): ?string
+    {
+        return $this->languageBeforeSchool;
+    }
+
+    public function setLanguageBeforeSchool(string $languageBeforeSchool): self
+    {
+        $this->languageBeforeSchool = $languageBeforeSchool;
+
+        return $this;
+    }
+
+    public function getLanguageInSchool(): ?string
+    {
+        return $this->languageInSchool;
+    }
+
+    public function setLanguageInSchool(string $languageInSchool): self
+    {
+        $this->languageInSchool = $languageInSchool;
+
+        return $this;
+    }
+
+    public function getUkrainianLanguageLevel(): ?string
+    {
+        return $this->ukrainianLanguageLevel;
+    }
+
+    public function setUkrainianLanguageLevel(string $ukrainianLanguageLevel): self
+    {
+        $this->ukrainianLanguageLevel = $ukrainianLanguageLevel;
+
+        return $this;
+    }
+
+    public function getRussianLanguageLevel(): ?string
+    {
+        return $this->russianLanguageLevel;
+    }
+
+    public function setRussianLanguageLevel(string $russianLanguageLevel): self
+    {
+        $this->russianLanguageLevel = $russianLanguageLevel;
 
         return $this;
     }
