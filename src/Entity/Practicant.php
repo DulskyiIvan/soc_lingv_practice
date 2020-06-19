@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PracticantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -43,6 +45,16 @@ class Practicant implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $lastName;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Questionary::class, mappedBy="practicant")
+     */
+    private $questionaries;
+
+    public function __construct()
+    {
+        $this->questionaries = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,6 +149,37 @@ class Practicant implements UserInterface
     public function setLastName(string $lastName): self
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Questionary[]
+     */
+    public function getQuestionaries(): Collection
+    {
+        return $this->questionaries;
+    }
+
+    public function addQuestionary(Questionary $questionary): self
+    {
+        if (!$this->questionaries->contains($questionary)) {
+            $this->questionaries[] = $questionary;
+            $questionary->setPracticant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuestionary(Questionary $questionary): self
+    {
+        if ($this->questionaries->contains($questionary)) {
+            $this->questionaries->removeElement($questionary);
+            // set the owning side to null (unless already changed)
+            if ($questionary->getPracticant() === $this) {
+                $questionary->setPracticant(null);
+            }
+        }
 
         return $this;
     }
