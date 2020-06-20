@@ -14,12 +14,13 @@ h1.h3 {
  /* background-color: darkslateblue;*/
   font-size: 30px;
   font-style: italic;
+  text-shadow: 0 1px 1px #2D2020
   
 }
 
 body{
 
- background-image: url("/images/AdobeStock-168775357-1030x676-1024x672.jpeg") ;
+ background-image: url("/images/v_53_91654394.jpg") ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -70,18 +71,18 @@ button {
 
 
 button:hover {
-  border: none;
+
   border-radius: 10px;
   padding: 10px 25px;
-  color: #000000;
-  background: #ffffff;
+  color: #ffffff;
+  background: rgba(44, 45, 39, 0.66);
   font-size: 12px;
 
   box-shadow: 0 0 3px -3px #000;
   position: relative;
+  left: 37%;
   margin-left: 121px;
   cursor: pointer;
-  display: block;
 }
 footer{
   margin-left: 0;

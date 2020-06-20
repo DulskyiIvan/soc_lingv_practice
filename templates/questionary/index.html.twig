@@ -1,21 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Questionary index{% endblock %}
-
+{% block stylesheets %}
+    <link href="{{ asset('images/questionary.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
     <h1>Questionary index</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                {#<th>Id</th>#}
                 <th>LiveLocation</th>
                 <th>Nationality</th>
                 <th>Sex</th>
                 <th>BirthYear</th>
                 <th>Education</th>
                 <th>Profession</th>
-                <th>SocialityState</th>
+               {# <th>SocialityState</th>
                 <th>NativeLanguage</th>
                 <th>WhereAreYouLongTermLived</th>
                 <th>FatherLanguage</th>
@@ -30,21 +32,21 @@
                 <th>PriorityLanguageInFamily</th>
                 <th>PriorityLanguageWithFriends</th>
                 <th>TokenOfChooseInformation</th>
-                <th>LanguageWithUnknown</th>
+                <th>LanguageWithUnknown</th>#}
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for questionary in questionaries %}
             <tr>
-                <td>{{ questionary.id }}</td>
+                {#<td>{{ questionary.id }}</td>#}
                 <td>{{ questionary.liveLocation }}</td>
                 <td>{{ questionary.nationality }}</td>
                 <td>{{ questionary.sex }}</td>
                 <td>{{ questionary.birthYear ? questionary.birthYear|date('Y-m-d') : '' }}</td>
                 <td>{{ questionary.education }}</td>
                 <td>{{ questionary.profession }}</td>
-                <td>{{ questionary.socialityState }}</td>
+                {#<td>{{ questionary.socialityState }}</td>
                 <td>{{ questionary.nativeLanguage }}</td>
                 <td>{{ questionary.whereAreYouLongTermLived }}</td>
                 <td>{{ questionary.fatherLanguage }}</td>
@@ -59,7 +61,7 @@
                 <td>{{ questionary.priorityLanguageInFamily }}</td>
                 <td>{{ questionary.priorityLanguageWithFriends }}</td>
                 <td>{{ questionary.tokenOfChooseInformation }}</td>
-                <td>{{ questionary.languageWithUnknown }}</td>
+                <td>{{ questionary.languageWithUnknown }}</td>#}
                 <td>
                     <a href="{{ path('questionary_show', {'id': questionary.id}) }}">show</a>
                     <a href="{{ path('questionary_edit', {'id': questionary.id}) }}">edit</a>
@@ -72,6 +74,6 @@
         {% endfor %}
         </tbody>
     </table>
-
+<br><br>
     <a href="{{ path('questionary_new') }}">Create new</a>
 {% endblock %}
