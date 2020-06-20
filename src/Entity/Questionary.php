@@ -418,6 +418,4 @@ class Questionary
     {
         return $this->liveLocation;
     }
-
-
 }

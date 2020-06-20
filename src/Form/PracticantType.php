@@ -13,7 +13,7 @@ class PracticantType extends AbstractType
     {
         $builder
             ->add('username')
-            ->add('roles')
+//            ->add('roles')
             ->add('password')
             ->add('firstName')
             ->add('lastName')
