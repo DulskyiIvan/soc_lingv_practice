@@ -1,6 +1,7 @@
 a {
     text-decoration: none;
     font-size: 12px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     padding: 11px 25px;
     color: #ffffff;
     background-color: darkslateblue;
@@ -39,4 +40,18 @@ h1 {
     font-style: italic;
     text-shadow: 0 1px 1px #2D2020
 
+}
+label.required {
+    font-family: "Times New Roman";
+    font-size: 21px;
+    display: inline-block;
+    margin: 10px;
+    width: 100px;
+    position: relative;
+    left: 42%;
+}
+input {
+    width: 190px;
+    position: relative;
+    left: 42%;
 }

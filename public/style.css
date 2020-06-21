@@ -34,7 +34,7 @@ body{
   padding: 15px 0 30px 10px;
 }*/
 
-label {
+.loglab {
   font-family: "Times New Roman";
   font-size: 21px;
   display: inline-block;
@@ -44,7 +44,7 @@ label {
   left: 42%;
   }
 
-input {
+.form-control {
   width: 190px;
   position: relative;
   left: 42%;
@@ -61,6 +61,7 @@ button {
   padding: 10px 25px;
   color: #fff;
   background-color: darkslateblue;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 12px;
   box-shadow: 0 0 3px -3px #000;
   position: relative;
@@ -72,17 +73,12 @@ button {
 
 button:hover {
 
-  border-radius: 10px;
+  text-decoration: none;
+  font-size: 12px;
   padding: 10px 25px;
   color: #ffffff;
-  background: rgba(44, 45, 39, 0.66);
-  font-size: 12px;
-
-  box-shadow: 0 0 3px -3px #000;
-  position: relative;
-  left: 37%;
-  margin-left: 121px;
-  cursor: pointer;
+  background-color: rgba(44, 45, 39, 0.66);
+  border-radius: 10px;
 }
 footer{
   margin-left: 0;
