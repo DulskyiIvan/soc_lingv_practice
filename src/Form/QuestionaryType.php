@@ -5,7 +5,7 @@ namespace App\Form;
 use App\Entity\Questionary;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,8 +17,16 @@ class QuestionaryType extends AbstractType
             ->add('liveLocation', null, ['label' => 'Місце проживання'])
             ->add('nationality', null, ['label' => 'Національність'])
             ->add('sex', ChoiceType::class, ['label' => 'Стать',
+//                'expanded'=>'true',
+//                'multiple'=>'false',
                 'choices' => ['чоловіча' => 'm', 'жіноча' => 'w']])
-            ->add('birthYear', null, ['label' => 'Рік народження'])
+            ->add('birthYear', DateType::class, [
+                'label' => 'Рік народження',
+                'widget'=>'choice',
+                'days'=>[1],
+                'months'=>[1],
+                'years'=>range(date("Y"), 1900)
+            ])
             ->add('education', ChoiceType::class, ['label' => 'Освіта',
                 'choices' => [
                     'незакінчена середня' => 'unfinished_middle',

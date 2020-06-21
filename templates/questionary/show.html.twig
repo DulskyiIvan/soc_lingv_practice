@@ -7,98 +7,184 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ questionary.id }}</td>
-            </tr>
-            <tr>
-                <th>LiveLocation</th>
-                <td>{{ questionary.liveLocation }}</td>
-            </tr>
-            <tr>
-                <th>Nationality</th>
-                <td>{{ questionary.nationality }}</td>
-            </tr>
-            <tr>
-                <th>Sex</th>
-                <td>{{ questionary.sex }}</td>
-            </tr>
-            <tr>
-                <th>BirthYear</th>
-                <td>{{ questionary.birthYear ? questionary.birthYear|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Education</th>
-                <td>{{ questionary.education }}</td>
-            </tr>
-            <tr>
-                <th>Profession</th>
-                <td>{{ questionary.profession }}</td>
-            </tr>
-            <tr>
-                <th>SocialityState</th>
-                <td>{{ questionary.socialityState }}</td>
-            </tr>
-            <tr>
-                <th>NativeLanguage</th>
-                <td>{{ questionary.nativeLanguage }}</td>
-            </tr>
-            <tr>
-                <th>WhereAreYouLongTermLived</th>
-                <td>{{ questionary.whereAreYouLongTermLived }}</td>
-            </tr>
-            <tr>
-                <th>FatherLanguage</th>
-                <td>{{ questionary.fatherLanguage }}</td>
-            </tr>
-            <tr>
-                <th>MatherLanguage</th>
-                <td>{{ questionary.matherLanguage }}</td>
-            </tr>
-            <tr>
-                <th>AgeStartStudyRussian</th>
-                <td>{{ questionary.ageStartStudyRussian }}</td>
-            </tr>
-            <tr>
-                <th>AgeStartStudyUkrainian</th>
-                <td>{{ questionary.ageStartStudyUkrainian }}</td>
-            </tr>
-            <tr>
-                <th>LanguageBeforeSchool</th>
-                <td>{{ questionary.languageBeforeSchool }}</td>
-            </tr>
-            <tr>
-                <th>LanguageInSchool</th>
-                <td>{{ questionary.languageInSchool }}</td>
-            </tr>
-            <tr>
-                <th>UkrainianLanguageLevel</th>
-                <td>{{ questionary.ukrainianLanguageLevel }}</td>
-            </tr>
-            <tr>
-                <th>RussianLanguageLevel</th>
-                <td>{{ questionary.russianLanguageLevel }}</td>
-            </tr>
-            <tr>
-                <th>NeedStudyRussianInSchool</th>
-                <td>{{ questionary.needStudyRussianInSchool }}</td>
-            </tr>
-            <tr>
-                <th>PriorityLanguageInFamily</th>
-                <td>{{ questionary.priorityLanguageInFamily }}</td>
-            </tr>
-            <tr>
-                <th>PriorityLanguageWithFriends</th>
-                <td>{{ questionary.priorityLanguageWithFriends }}</td>
-            </tr>
-            <tr>
-                <th>TokenOfChooseInformation</th>
-                <td>{{ questionary.tokenOfChooseInformation }}</td>
-            </tr>
-            <tr>
-                <th>LanguageWithUnknown</th>
-                <td>{{ questionary.languageWithUnknown }}</td>
-            </tr>
+        <tr>
+            <th>Місце проживання</th>
+            <td>{{ questionary.liveLocation }}</td>
+        </tr>
+        <tr>
+            <th>Національність</th>
+            <td>{{ questionary.nationality }}</td>
+        </tr>
+        <tr>
+            <th>Стать</th>
+            <td>
+                {% if questionary.sex == 'm' %}
+                    чоловіча
+                {% else %}
+                    жіноча
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Рік народження</th>
+            <td>{{ questionary.birthYear ? questionary.birthYear|date('Y') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Освіта</th>
+            <td>
+                {% if (questionary.education == 'unfinished_middle') %}
+                    незакінчена середня
+                {% elseif questionary.education == 'middle' %}
+                    середня
+                {% elseif questionary.education == 'special_middle' %}
+                    середня спеціальна
+                {% elseif questionary.education == 'unfinished_high' %}
+                    незакінчена вища
+                {% elseif questionary.education == 'human_high' %}
+                    вища гуманітарна
+                {% elseif questionary.education == 'not_human_high' %}
+                    вища негуманітарна
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Професія</th>
+            <td>{{ questionary.profession }}</td>
+        </tr>
+        <tr>
+            <th>Соціальний стан</th>
+            <td>
+                {% if questionary.socialityState == 'worker' %}
+                    робітник
+                {% elseif questionary.socialityState == 'farmer' %}
+                    колгоспник
+                {% elseif questionary.socialityState == 'staff' %}
+                    службовець
+                {% elseif questionary.socialityState == 'student' %}
+                    учень
+                {% elseif questionary.socialityState == 'pensioner' %}
+                    пенсіонер
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Рідна мова</th>
+            <td>
+                {% if questionary.nativeLanguage == 'ukrainian' %}
+                    українська
+                {% elseif questionary.nativeLanguage == 'russian' %}
+                    російська
+                {% elseif questionary.nativeLanguage == 'other' %}
+                    інша
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Де Ви жили найбільш тривалий час?</th>
+            <td>{{ questionary.whereAreYouLongTermLived }}</td>
+        </tr>
+        <tr>
+            <th>Якою мовою розмовляє (розмовляв) батько?</th>
+            <td>{{ questionary.fatherLanguage }}</td>
+        </tr>
+        <tr>
+            <th>Якою мовою розмовляє (розмовляла) мати?</th>
+            <td>{{ questionary.matherLanguage }}</td>
+        </tr>
+        <tr>
+            <th>З якого віку Ви почали цілеспрямовано вивчати російську мову?</th>
+            <td>{{ questionary.ageStartStudyRussian }}</td>
+        </tr>
+        <tr>
+            <th>З якого віку Ви почали цілеспрямовано вивчати українську мову?</th>
+            <td>{{ questionary.ageStartStudyUkrainian }}</td>
+        </tr>
+        <tr>
+            <th>Якою мовою Ви розмовляли до школи?</th>
+            <td>{{ questionary.languageBeforeSchool }}</td>
+        </tr>
+        <tr>
+            <th>Якою мовою велись заняття в школі?</th>
+            <td>{{ questionary.languageInSchool }}</td>
+        </tr>
+        <tr>
+            <th>В якій мірі Ви володієте українською мовою?</th>
+            <td>
+                {% if questionary.ukrainianLanguageLevel == 'good' %}
+                    добре
+                {% elseif questionary.ukrainianLanguageLevel == 'not_good' %}
+                    не дуже добре
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>В якій мірі Ви володієте російською мовою?</th>
+            <td>
+                {% if questionary.russianLanguageLevel == 'good' %}
+                    добре
+                {% elseif questionary.russianLanguageLevel == 'not_good' %}
+                    не дуже добре
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Чи потрібно вивчати російську мову в школі?</th>
+            <td>
+                {% if questionary.needStudyRussianInSchool == 'yes' %}
+                    так
+                {% elseif questionary.needStudyRussianInSchool == 'no' %}
+                    ні
+                {% elseif questionary.needStudyRussianInSchool == 'dont_know' %}
+                    не знаю
+                {% elseif questionary.needStudyRussianInSchool == 'difficult_say' %}
+                    важко відповісти
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Якою мовою Ви переважно спілкуєтесь в родині?</th>
+            <td>
+                {% if questionary.priorityLanguageInFamily == 'ukrainian' %}
+                    українська
+                {% elseif questionary.priorityLanguageInFamily == 'russian' %}
+                    російська
+                {% elseif questionary.priorityLanguageInFamily == 'other' %}
+                    інша
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Якою мовою Ви переважно спілкуєтесь з друзями, знайомими?</th>
+            <td>
+                {% if questionary.priorityLanguageWithFriends == 'ukrainian' %}
+                    українська
+                {% elseif questionary.priorityLanguageWithFriends == 'russian' %}
+                    російська
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>За якими ознаками Ви обираєте книжки, телепередачі?</th>
+            <td>
+                {% if questionary.tokenOfChooseInformation == 'ukrainian' %}
+                    за мовою українська
+                {% elseif questionary.tokenOfChooseInformation == 'russian' %}
+                    за мовою російська
+                {% elseif questionary.tokenOfChooseInformation == 'by_content' %}
+                    за змістом
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Якою мовою Ви звертаєтесь до незнайомої людини?</th>
+            <td>
+                {% if questionary.languageWithUnknown == 'ukrainian' %}
+                    українська
+                {% elseif questionary.languageWithUnknown == 'russian' %}
+                    російська
+                {% endif %}
+            </td>
+        </tr>
         </tbody>
     </table>
 
