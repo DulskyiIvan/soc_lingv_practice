@@ -83,3 +83,15 @@ tr:last-child td:last-child {
 tr td:last-child {
     border-right: none;
 }
+div#questionary_birthYear{
+    padding: 16px;
+    text-align: center;
+    margin-left: 36px;
+}
+select#questionary_practicant{
+
+    margin-left: 50%;
+}
+select{
+    padding: 10px;
+}
