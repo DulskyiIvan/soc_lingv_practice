@@ -2,10 +2,55 @@
 
 {% block title %}Зведена таблиця №1{% endblock %}
 {% block stylesheets %}
-    <link href="{{ asset('report.css') }}" rel="stylesheet"  />
+    <link href="{{ asset('report.css') }}" rel="stylesheet" />
+    <style>
+
+        a {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 10px 25px;
+            color: #ffffff;
+            background-color: darkslateblue;
+            border-radius: 10px;
+
+
+        }
+        a:hover{
+            text-decoration: none;
+            font-size: 12px;
+            padding: 10px 25px;
+            color: #ffffff;
+            background-color: rgba(44, 45, 39, 0.66);
+            border-radius: 10px;
+        }
+        table{
+
+            width: 100%;
+            border-collapse:collapse;
+            border-spacing:0;
+            display: table;
+            background-color: white;
+
+        }
+        table, td, th {
+            border: 1px solid #595959;
+        }
+        td, th {
+            padding: 2px;
+            width: 30px;
+            height: 35px;
+
+        }
+        th {
+            background-color: #7accee;
+        }
+
+    </style>
 {% endblock %}
 
 {% block body  %}
+
     <table id="report">
         <tbody>
         <tr>
@@ -290,7 +335,9 @@
         </tr>
         </tbody>
     </table>
+    <pre></pre>
     <a href="{{ path('report') }}" >Назад до списку</a>
 
-    <a href="{{ path('pdf') }}">GO</a>
+    <a href="{{ path('pdf') }}">Згенерувати в PDF</a>
+
 {% endblock %}

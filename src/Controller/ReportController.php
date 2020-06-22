@@ -73,7 +73,7 @@ class ReportController extends AbstractController
         $dompdf->render();
 
         // Output the generated PDF to Browser (force download)
-        $dompdf->stream("mypdf.pdf", [
+        $dompdf->stream("Зведена таблиця №1.pdf", [
             "Attachment" => true
         ]);
     }

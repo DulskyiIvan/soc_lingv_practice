@@ -1,20 +1,11 @@
-table{
-    font-family: Arial;
-    width: 100%;
-    border-collapse:collapse;
-    border-spacing:0;
-    display: table;
+body{
 
-}
-table, td, th {
-    border: 1px solid #595959;
-}
-td, th {
-    padding: 2px;
-    width: 30px;
-    height: 35px;
+    background-image: url("/images/AdobeStock-168775357-1030x676-1024x672.jpeg") ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-position: center;*/
 
-}
-th {
-    background-color: #7accee;
+
 }
