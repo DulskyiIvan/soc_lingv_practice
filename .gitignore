@@ -14,6 +14,7 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+/.idea/
 /.idea/composerJson.xml
 /.idea/symfony2.xml
 /.idea/dataSources/98fb9240-d7b5-4b0d-8a90-985ccddc096c.xml
