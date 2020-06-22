@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Practicant{% endblock %}
+{% block title %}Практикант{% endblock %}
 {% block stylesheets %}
     <link href="{{ asset('practicant.css') }}" rel="stylesheet" />
 {% endblock %}
 {% block body %}
-    <h1>Practicant</h1>
+    <h1>Практикант</h1>
 
     <table class="table">
         <tbody>
@@ -17,14 +17,14 @@
                 <th>Username</th>
                 <td>{{ practicant.username }}</td>
             </tr>
-            <tr>
+            {#<tr>
                 <th>Roles</th>
                 <td>{{ practicant.roles ? practicant.roles|json_encode : '' }}</td>
             </tr>
             <tr>
                 <th>Password</th>
                 <td>{{ practicant.password }}</td>
-            </tr>
+            </tr>#}
             <tr>
                 <th>FirstName</th>
                 <td>{{ practicant.firstName }}</td>
@@ -37,9 +37,9 @@
     </table>
 <br>
 
-    <a href="{{ path('practicant_index') }}">back to list</a>
+    <a href="{{ path('practicant_index') }}">Назад до списку</a>
 
-    <a href="{{ path('practicant_edit', {'id': practicant.id}) }}">edit</a>
+    <a href="{{ path('practicant_edit', {'id': practicant.id}) }}">Редагувати</a>
     <br><br>
 
     {{ include('practicant/_delete_form.html.twig') }}
