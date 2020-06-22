@@ -88,6 +88,13 @@ div#questionary_birthYear{
 
 
 }
+select#questionary_birthYear_month{
+    display: none;
+}
+
+select#questionary_birthYear_day{
+    display: none;
+}
 
 select{
     padding: 6px;
