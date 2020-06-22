@@ -4,6 +4,7 @@
 {% block stylesheets %}
     <link href="{{ asset('report.css') }}" rel="stylesheet" />
 {% endblock %}
+
 {% block body %}
     <table>
         <tbody>
@@ -289,14 +290,6 @@
         </tr>
         </tbody>
     </table>
+    <a href="{{ path('report') }}" >Назад до списку</a>
 
-<div class="example-wrapper">
-   {# <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Open server 5_3_5 ultimate/OSPanel/domains/soc_lingv_practice/src/Controller/ReportController.php'|file_link(0) }}">src/Controller/ReportController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Open server 5_3_5 ultimate/OSPanel/domains/soc_lingv_practice/templates/report/index.html.twig'|file_link(0) }}">templates/report/index.html.twig</a></code></li>
-    </ul>#}
-</div>
 {% endblock %}
