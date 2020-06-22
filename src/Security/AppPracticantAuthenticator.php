@@ -95,10 +95,13 @@ class AppPracticantAuthenticator extends AbstractFormLoginAuthenticator implemen
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
-            return new RedirectResponse($targetPath);
+
+            $user = $token->getUser();
+            return new RedirectResponse($this->urlGenerator->generate('practicant_index'));
+//            return new RedirectResponse($targetPath);
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        // return new RedirectResponse($this->urlGenerator->generate('app_login'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
