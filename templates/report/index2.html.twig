@@ -1,0 +1,358 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Report 2!{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('report.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="2" rowspan="4">Паспортні дані
+
+
+
+                Мова спілкування</td>
+            <td rowspan="4">Стать</td>
+            <td colspan="4">Спілуквання</td>
+            <td rowspan="4">Всього</td>
+            <td colspan="10">Мова спілкування</td>
+            <td rowspan="4">Всього</td>
+            <td colspan="4" rowspan="2">Вивчення рос.мови в школі</td>
+            <td rowspan="4">Всього</td>
+        </tr>
+        <tr>
+            <td colspan="2">Родина</td>
+            <td colspan="2">Друзі</td>
+            <td colspan="4">В родині</td>
+            <td colspan="2">Цілеспрямоване вивчення мов</td>
+            <td colspan="2">До школи</td>
+            <td colspan="2">В школі</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2">Мати</td>
+            <td colspan="2">Батько</td>
+            <td rowspan="2">Укр.</td>
+            <td rowspan="2">Рос.</td>
+            <td rowspan="2">Укр.</td>
+            <td rowspan="2">Рос.</td>
+            <td rowspan="2">Укр.</td>
+            <td rowspan="2">Рос.</td>
+            <td rowspan="2">Так</td>
+            <td rowspan="2">Ні</td>
+            <td rowspan="2">Не знаю</td>
+            <td rowspan="2">Важко відповісти</td>
+        </tr>
+        <tr>
+            <td>Укр.</td>
+            <td>Рос.</td>
+            <td>Укр.</td>
+            <td>Рос.</td>
+            <td>Укр.</td>
+            <td>Рос.</td>
+            <td>Укр.</td>
+            <td>Рос.</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Вік</td>
+            <td rowspan="2">Мол.</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Серед.</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Похил</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="6">Освіта</td>
+            <td rowspan="2">Вища</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Незак. Вища</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Середня</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

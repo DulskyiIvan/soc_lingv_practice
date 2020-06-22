@@ -8,11 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReportController extends AbstractController
 {
     /**
-     * @Route("/report", name="report")
+     * @Route("/report/1", name="1")
      */
     public function index()
     {
         return $this->render('report/index.html.twig', [
+            'controller_name' => 'ReportController',
+        ]);
+    }
+
+    /**
+     * @Route("/report/2", name="2")
+     */
+    public function index2()
+    {
+        return $this->render('report/index2.html.twig', [
             'controller_name' => 'ReportController',
         ]);
     }
