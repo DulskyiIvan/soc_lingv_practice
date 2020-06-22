@@ -2,11 +2,11 @@
 
 {% block title %}Зведена таблиця №1{% endblock %}
 {% block stylesheets %}
-    <link href="{{ asset('report.css') }}" rel="stylesheet" />
+    <link href="{{ asset('report.css') }}" rel="stylesheet"  />
 {% endblock %}
 
-{% block body %}
-    <table>
+{% block body  %}
+    <table id="report">
         <tbody>
         <tr>
             <td colspan="2" rowspan="6">Паспортні дані
@@ -292,4 +292,5 @@
     </table>
     <a href="{{ path('report') }}" >Назад до списку</a>
 
+    <a href="{{ path('pdf') }}">GO</a>
 {% endblock %}

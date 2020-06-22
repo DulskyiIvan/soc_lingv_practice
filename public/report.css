@@ -1,7 +1,10 @@
 table{
+    font-family: Arial;
     width: 100%;
     border-collapse:collapse;
-    border-spacing:0
+    border-spacing:0;
+    display: table;
+
 }
 table, td, th {
     border: 1px solid #595959;
@@ -10,6 +13,7 @@ td, th {
     padding: 2px;
     width: 30px;
     height: 35px;
+
 }
 th {
     background-color: #7accee;
