@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Practicant index{% endblock %}
-
+{% block stylesheets %}
+    <link href="{{ asset('practicant.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
     <h1>Practicant index</h1>
 
@@ -38,6 +40,6 @@
         {% endfor %}
         </tbody>
     </table>
-
+<br>
     <a href="{{ path('app_register') }}">Create new</a>
 {% endblock %}

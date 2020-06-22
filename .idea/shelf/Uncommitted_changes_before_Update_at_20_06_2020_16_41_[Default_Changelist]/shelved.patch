@@ -1,0 +1,168 @@
+Index: public/practicant.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- public/practicant.css	(date 1592659983555)
++++ public/practicant.css	(date 1592659983555)
+@@ -0,0 +1,82 @@
++h1 {
++    margin-left: auto;
++    margin-right: auto;
++    text-align: center;
++    border-radius: 25px;
++    /* background-color: darkslateblue;*/
++    font-size: 35px;
++    font-style: italic;
++    text-shadow: 0 1px 1px #2D2020
++
++}
++table {
++    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
++    font-size: 14px;
++    border-radius: 10px;
++    border-spacing: 0;
++    text-align: center;
++    position: relative;
++
++}
++th {
++    background: #aab40b;
++    color: #211f1f;
++    /*text-shadow: 0 1px 1px #2D2020;*/
++    padding: 10px 68px;
++}
++th, td {
++    border-style: solid;
++    border-width: 0 1px 1px 0;
++    border-color: white;
++}
++th:first-child, td:first-child {
++    text-align: left;
++}
++th:first-child {
++    border-top-left-radius: 10px;
++}
++th:last-child {
++    border-top-right-radius: 10px;
++    border-right: none;
++}
++td {
++    padding: 10px 20px;
++    background: #d0cfc2;
++}
++tr:last-child td:first-child {
++    border-radius: 0 0 0 10px;
++}
++tr:last-child td:last-child {
++    border-radius: 0 0 10px 10px;
++}
++tr td:last-child {
++    border-right: none;
++}
++
++body{
++
++    background-image: url("/images/AdobeStock-168775357-1030x676-1024x672.jpeg") ;
++    -webkit-background-size: cover;
++    -moz-background-size: cover;
++    -o-background-size: cover;
++    background-size: cover;
++    /*background-position: center;*/
++
++
++}
++a {
++    text-decoration: none;
++    font-size: 16px;
++    padding: 10px 25px;
++    color: #ffffff;
++    background-color: darkslateblue;
++    border-radius: 10px;
++}
++a:hover{
++    text-decoration: none;
++    font-size: 16px;
++    padding: 10px 25px;
++    color: #ffffff;
++    background-color: rgba(44, 45, 39, 0.66);
++    border-radius: 10px;
++}
+\ No newline at end of file
+Index: templates/practicant/index.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\r\n\r\n{% block title %}Practicant index{% endblock %}\r\n\r\n{% block body %}\r\n    <h1>Practicant index</h1>\r\n\r\n    <table class=\"table\">\r\n        <thead>\r\n            <tr>\r\n{#                <th>Id</th>#}\r\n                <th>Username</th>\r\n{#                <th>Roles</th>#}\r\n{#                <th>Password</th>#}\r\n                <th>FirstName</th>\r\n                <th>LastName</th>\r\n                <th>actions</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n        {% for practicant in practicants %}\r\n            <tr>\r\n{#                <td>{{ practicant.id }}</td>#}\r\n                <td>{{ practicant.username }}</td>\r\n{#                <td>{{ practicant.roles ? practicant.roles|json_encode : '' }}</td>#}\r\n{#                <td>{{ practicant.password }}</td>#}\r\n                <td>{{ practicant.firstName }}</td>\r\n                <td>{{ practicant.lastName }}</td>\r\n                <td>\r\n                    <a href=\"{{ path('practicant_show', {'id': practicant.id}) }}\">show</a>\r\n                    <a href=\"{{ path('practicant_edit', {'id': practicant.id}) }}\">edit</a>\r\n                </td>\r\n            </tr>\r\n        {% else %}\r\n            <tr>\r\n                <td colspan=\"7\">no records found</td>\r\n            </tr>\r\n        {% endfor %}\r\n        </tbody>\r\n    </table>\r\n\r\n    <a href=\"{{ path('app_register') }}\">Create new</a>\r\n{% endblock %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/practicant/index.html.twig	(revision ae6b3e77c653c6f3c8d87aeca35d5b0566417028)
++++ templates/practicant/index.html.twig	(date 1592659983515)
+@@ -1,7 +1,9 @@
+ {% extends 'base.html.twig' %}
+ 
+ {% block title %}Practicant index{% endblock %}
+-
++{% block stylesheets %}
++    <link href="{{ asset('practicant.css') }}" rel="stylesheet" />
++{% endblock %}
+ {% block body %}
+     <h1>Practicant index</h1>
+ 
+@@ -38,6 +40,6 @@
+         {% endfor %}
+         </tbody>
+     </table>
+-
++<br>
+     <a href="{{ path('app_register') }}">Create new</a>
+ {% endblock %}
+Index: templates/base.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <meta charset=\"UTF-8\">\r\n        <title>{% block title %}Welcome!{% endblock %}</title>\r\n        {% block stylesheets %}\r\n            <link href=\"{{ asset('style.css') }}\" rel=\"stylesheet\" />\r\n        {% endblock %}\r\n    </head>\r\n    <body>\r\n        {% block body %}{% endblock %}\r\n        {% block javascripts %}{% endblock %}\r\n    </body>\r\n<footer>by Ivan Dulsliy 2020</footer>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/base.html.twig	(revision ae6b3e77c653c6f3c8d87aeca35d5b0566417028)
++++ templates/base.html.twig	(date 1592659983534)
+@@ -11,5 +11,5 @@
+         {% block body %}{% endblock %}
+         {% block javascripts %}{% endblock %}
+     </body>
+-<footer>by Ivan Dulsliy 2020</footer>
++
+ </html>
+Index: public/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>form {\r\n  margin: 0 8px 0 8px;\r\n  padding: 100px 100px 250px 100px;\r\n\r\n  font: 14px Arial, sans-serif;\r\n\r\n}\r\n\r\nh1.h3 {\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  text-align: center;\r\n  border-radius: 25px;\r\n /* background-color: darkslateblue;*/\r\n  font-size: 30px;\r\n  font-style: italic;\r\n  \r\n}\r\n\r\nbody{\r\n\r\n background-image: url(\"/images/AdobeStock-168775357-1030x676-1024x672.jpeg\") ;\r\n  -webkit-background-size: cover;\r\n  -moz-background-size: cover;\r\n  -o-background-size: cover;\r\n  background-size: cover;\r\n  /*background-position: center;*/\r\n\r\n\r\n}\r\n/*.fields {\r\n  border: 1px solid #ccc;\r\n  padding: 15px 0 30px 10px;\r\n}*/\r\n\r\nlabel {\r\n  font-family: \"Times New Roman\";\r\n  font-size: 21px;\r\n  display: inline-block;\r\n  margin: 10px;\r\n  width: 100px;\r\n  position: relative;\r\n  left: 42%;\r\n  }\r\n\r\ninput {\r\n  width: 190px;\r\n  position: relative;\r\n  left: 42%;\r\n\r\n  }\r\n\r\np {\r\n  margin: -20px 0 0 10px;\r\n}\r\n\r\nbutton {\r\n  border: none;\r\n  border-radius: 10px;\r\n  padding: 10px 25px;\r\n  color: #fff;\r\n  background-color: darkslateblue;\r\n  font-size: 12px;\r\n  box-shadow: 0 0 3px -3px #000;\r\n  position: relative;\r\n  left: 37%;\r\n  margin-left: 121px;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\nbutton:hover {\r\n  border: none;\r\n  border-radius: 10px;\r\n  padding: 10px 25px;\r\n  color: #000000;\r\n  background: #ffffff;\r\n  font-size: 12px;\r\n\r\n  box-shadow: 0 0 3px -3px #000;\r\n  position: relative;\r\n  margin-left: 121px;\r\n  cursor: pointer;\r\n  display: block;\r\n}\r\nfooter{\r\n  margin-left: 0;\r\n  margin-right: 0;\r\n  height: 30px;\r\n  text-align: center;\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- public/style.css	(revision ae6b3e77c653c6f3c8d87aeca35d5b0566417028)
++++ public/style.css	(date 1592659983548)
+@@ -14,12 +14,13 @@
+  /* background-color: darkslateblue;*/
+   font-size: 30px;
+   font-style: italic;
++  text-shadow: 0 1px 1px #2D2020
+   
+ }
+ 
+ body{
+ 
+- background-image: url("/images/AdobeStock-168775357-1030x676-1024x672.jpeg") ;
++ background-image: url("/images/v_53_91654394.jpg") ;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+@@ -70,7 +71,7 @@
+ 
+ 
+ button:hover {
+-  border: none;
++
+   border-radius: 10px;
+   padding: 10px 25px;
+   color: #000000;
