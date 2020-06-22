@@ -36,4 +36,13 @@ class ReportController extends AbstractController
             'controller_name' => 'ReportController',
         ]);
     }
+    /**
+     * @Route("/report/", name="report")
+     */
+    public function show()
+    {
+        return $this->render('report/show.html.twig', [
+            'controller_name' => 'ReportController',
+        ]);
+    }
 }
