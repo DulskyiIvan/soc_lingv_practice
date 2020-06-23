@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Practicant{% endblock %}
-
+{% block title %}Редагувати практиканта{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('questionary.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
-    <h1>Edit Practicant</h1>
+    <h1>Редагувати практиканта</h1>
 
-    {{ include('practicant/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('practicant_index') }}">back to list</a>
-
+    {{ include('practicant/_form.html.twig', {'button_label': 'Редагувати'}) }}
+    <pre></pre>
     {{ include('practicant/_delete_form.html.twig') }}
+    <pre></pre>
+    <a href="{{ path('practicant_index') }}">Назад до списку</a>
 {% endblock %}

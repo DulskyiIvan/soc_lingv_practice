@@ -1,0 +1,217 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Зведена таблиця №3{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('report.css') }}" rel="stylesheet" />
+    <style>
+
+        a {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 10px 25px;
+            color: #ffffff;
+            background-color: darkslateblue;
+            border-radius: 10px;
+
+
+        }
+        a:hover{
+            text-decoration: none;
+            font-size: 12px;
+            padding: 10px 25px;
+            color: #ffffff;
+            background-color: rgba(44, 45, 39, 0.66);
+            border-radius: 10px;
+        }
+        table{
+
+            width: 100%;
+            border-collapse:collapse;
+            border-spacing:0;
+            display: table;
+            background-color: white;
+
+        }
+        table, td, th {
+            border: 1px solid #595959;
+        }
+        td, th {
+            padding: 2px;
+            width: 30px;
+            height: 35px;
+
+        }
+        th {
+            background-color: #7accee;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="2" rowspan="2">Паспортні дані
+
+                Мова спілкування</td>
+            <td rowspan="2">Стать</td>
+            <td colspan="2">Вибір інформації</td>
+            <td colspan="2">Мова</td>
+            <td colspan="2">Звернення до незнайомого</td>
+            <td rowspan="2">Обома</td>
+            <td rowspan="2">Всього</td>
+        </tr>
+        <tr>
+            <td>За змістом</td>
+            <td>За мовою</td>
+            <td>Укр.</td>
+            <td>Рос.</td>
+            <td>Укр.</td>
+            <td>Рос.</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Вік</td>
+            <td rowspan="2">Мол.</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Серед.</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Похил.</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="6">Освіта</td>
+            <td rowspan="2">Вища</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Незак. Вища</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Середня</td>
+            <td>Ч.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ж.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    <pre></pre>
+    <a href="{{ path('report') }}" >Назад до списку</a>
+{% endblock %}

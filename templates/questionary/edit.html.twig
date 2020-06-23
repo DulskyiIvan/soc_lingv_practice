@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Questionary{% endblock %}
-
+{% block title %}Редагування анкети{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('questionary.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
-    <h1>Edit Questionary</h1>
+    <h1>Редагування анкети</h1>
+    {{ include('questionary/_form.html.twig', {'button_label': 'Редагувати'}) }}
 
-    {{ include('questionary/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('questionary_index') }}">back to list</a>
-
+    <pre></pre>
     {{ include('questionary/_delete_form.html.twig') }}
+    <pre></pre>
+    <a href="{{ path('questionary_index') }}">Назад до списку</a>
 {% endblock %}

@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Practicant index{% endblock %}
+{% block title %}Практиканти{% endblock %}
 {% block stylesheets %}
     <link href="{{ asset('practicant.css') }}" rel="stylesheet" />
 {% endblock %}
 {% block body %}
-    <h1>Practicant index</h1>
+    <h1>Практиканти</h1>
 
     <table class="table">
         <thead>
@@ -29,8 +29,8 @@
                 <td>{{ practicant.firstName }}</td>
                 <td>{{ practicant.lastName }}</td>
                 <td>
-                    <a href="{{ path('practicant_show', {'id': practicant.id}) }}">show</a>
-                    <a href="{{ path('practicant_edit', {'id': practicant.id}) }}">edit</a>
+                    <a href="{{ path('practicant_show', {'id': practicant.id}) }}">Переглянути</a>
+                    <a href="{{ path('practicant_edit', {'id': practicant.id}) }}">Редагувати</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 <br>
-    <a href="{{ path('app_register') }}">Create new</a>
+    <a href="{{ path('app_register') }}">Створити нового</a>
 {% endblock %}

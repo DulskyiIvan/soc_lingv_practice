@@ -1,0 +1,11 @@
+body{
+
+    background-image: url("/images/AdobeStock-168775357-1030x676-1024x672.jpeg") ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-position: center;*/
+
+
+}
