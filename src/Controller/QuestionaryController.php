@@ -17,12 +17,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionaryController extends AbstractController
 {
     /**
-     * @Route("/{id}", name="questionary_index", methods={"GET"})
+     * @Route("/", name="questionary_index", methods={"GET"})
      * @param QuestionaryRepository $questionaryRepository
-     * @param Practicant $practicant
      * @return Response
      */
-    public function index(QuestionaryRepository $questionaryRepository, Practicant $practicant): Response
+    public function index(QuestionaryRepository $questionaryRepository): Response
     {
         return $this->render('questionary/index.html.twig', [
             'questionaries' => $questionaryRepository->findAll(),
