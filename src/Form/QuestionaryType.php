@@ -86,7 +86,8 @@ class QuestionaryType extends AbstractType
             ->add('languageWithUnknown', ChoiceType::class, ['label' => 'Якою мовою Ви звертаєтесь до незнайомої людини?',
                 'choices' => [
                     'українська' => 'ukrainian',
-                    'російська' => 'russian'
+                    'російська' => 'russian',
+                    'обома' => 'both'
                 ]])
             ->add('practicant');
     }
