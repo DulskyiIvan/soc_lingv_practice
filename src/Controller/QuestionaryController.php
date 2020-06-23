@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Practicant;
 use App\Entity\Questionary;
 use App\Form\QuestionaryType;
 use App\Repository\QuestionaryRepository;
@@ -16,11 +17,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionaryController extends AbstractController
 {
     /**
-     * @Route("/", name="questionary_index", methods={"GET"})
+     * @Route("/{id}", name="questionary_index", methods={"GET"})
      * @param QuestionaryRepository $questionaryRepository
+     * @param Practicant $practicant
      * @return Response
      */
-    public function index(QuestionaryRepository $questionaryRepository): Response
+    public function index(QuestionaryRepository $questionaryRepository, Practicant $practicant): Response
     {
         return $this->render('questionary/index.html.twig', [
             'questionaries' => $questionaryRepository->findAll(),
